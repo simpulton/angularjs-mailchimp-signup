@@ -1,0 +1,26 @@
+.message-animation {
+    transition:0.5s linear all;
+}
+
+.message-animation.ng-enter,
+.message-animation.ng-leave.ng-leave-active {
+    opacity: 0;
+}
+
+.message-animation.ng-leave,
+.message-animation.ng-enter.ng-enter-active {
+    opacity: 1;
+}
+
+.show-animation {
+    transition:0.5s linear all;
+}
+
+.show-animation.ng-enter,
+.show-animation.ng-leave.ng-leave-active {
+    opacity:0;
+}
+.show-animation.ng-leave,
+.show-animation.ng-enter.ng-enter-active {
+    opacity:1;
+}
