@@ -10,6 +10,10 @@ body {
     margin-right: auto;
 }
 
+.signup-wrapper .alert {
+    margin-top: 10px;
+}
+
 .signup-wrapper input[text] {
     padding: 0 .4em 0 .4em;
     margin-bottom: 2em;

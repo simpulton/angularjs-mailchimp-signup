@@ -3,7 +3,7 @@
 }
 
 .message-animation {
-    transition: 0.2s linear all;
+    transition: 0.2s ease-in-out all;
 }
 
 .message-animation.ng-enter.ng-enter-active {
