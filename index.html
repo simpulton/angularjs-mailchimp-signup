@@ -13,8 +13,11 @@
             <div class="logo">
                 <img src="assets/images/logo.png" alt="Logo"/>
             </div>
+            <div class="alert alert-success message-animation" role="alert" ng-if="ctrl.showSubmittedPrompt">
+                Thank you! Your account has been created.
+            </div>
             <form name="ctrl.signupForm" ng-submit="ctrl.signup()" novalidate>
-                <div class="form-group">
+                <div class="form-group" ng-class="{'has-error':ctrl.hasErrorClass('email')}">
                     <label for="email">Email</label>
                     <input id="email" name="email" class="form-control" type="email" required
                            ng-model="ctrl.newCustomer.email" ng-model-options="{ updateOn : 'default blur' }"
@@ -27,7 +30,7 @@
                         </div>
                     </div>
 
-                    <div class="my-messages" ng-messages="ctrl.signupForm.email.$error" ng-if="ctrl.signupForm.email.$touched || ctrl.signupForm.$submitted">
+                    <div class="my-messages" ng-messages="ctrl.signupForm.email.$error" ng-if="ctrl.showMessages('email')">
                         <div class="message-animation" ng-message="required">
                             <strong>This field is required.</strong>
                         </div>
@@ -37,7 +40,7 @@
                     </div>
 
                 </div>
-                <div class="form-group">
+                <div class="form-group" ng-class="{'has-error':ctrl.hasErrorClass('userName')}">
                     <label for="userName">Username</label>
                     <input id="userName" name="userName" class="form-control" type="text" required
                            ng-model="ctrl.newCustomer.userName" ng-model-options="{ updateOn : 'default blur' }"
@@ -49,7 +52,7 @@
                         </div>
                     </div>
 
-                    <div class="my-messages" ng-messages="ctrl.signupForm.userName.$error" ng-if="ctrl.signupForm.userName.$touched || ctrl.signupForm.$submitted">
+                    <div class="my-messages" ng-messages="ctrl.signupForm.userName.$error" ng-if="ctrl.showMessages('userName')">
                         <div class="message-animation" ng-message="required">
                             <strong>This field is required.</strong>
                         </div>
@@ -59,7 +62,7 @@
                 <div class="form-group">
                     <label for="password">Password</label>
 
-                    <div class="input-group">
+                    <div class="input-group" ng-class="{'has-error':ctrl.hasErrorClass('password')}">
                         <input id="password" name="password" class="form-control" required
                                type="{{ctrl.getPasswordType()}}"
                                ng-model-options="{ updateOn : 'default blur' }"
@@ -70,7 +73,7 @@
                         </span>
                     </div>
 
-                    <div class="my-messages" ng-messages="ctrl.signupForm.password.$error" ng-if="ctrl.signupForm.password.$touched || ctrl.signupForm.$submitted">
+                    <div class="my-messages" ng-messages="ctrl.signupForm.password.$error" ng-if="ctrl.showMessages('password')">
                         <div class="message-animation" ng-message="required">
                             <strong>This field is required.</strong>
                         </div>
@@ -93,7 +96,7 @@
                     </div>
                 </div>
 
-                <button class="btn btn-primary" ng-disabled="ctrl.signupForm.$invalid" type="submit">Create My Account</button>
+                <button class="btn btn-primary" type="submit">Create My Account</button>
             </form>
         </div>
 
