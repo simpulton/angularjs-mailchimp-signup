@@ -1,26 +1,27 @@
+.my-messages {
+    position: relative;
+}
+
 .message-animation {
-    transition:0.5s linear all;
+    transition: 0.2s linear all;
 }
 
-.message-animation.ng-enter,
-.message-animation.ng-leave.ng-leave-active {
-    opacity: 0;
-}
-
-.message-animation.ng-leave,
 .message-animation.ng-enter.ng-enter-active {
     opacity: 1;
+    margin-top: 0;
 }
 
-.show-animation {
-    transition:0.5s linear all;
+.message-animation.ng-enter {
+    opacity: 0;
+    margin-top: -20px;
 }
 
-.show-animation.ng-enter,
-.show-animation.ng-leave.ng-leave-active {
-    opacity:0;
+.message-animation.ng-leave {
+    opacity: 1;
+    margin-top: 0;
 }
-.show-animation.ng-leave,
-.show-animation.ng-enter.ng-enter-active {
-    opacity:1;
+
+.message-animation.ng-leave-active {
+    opacity: 0;
+    margin-top: -20px;
 }

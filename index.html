@@ -20,11 +20,14 @@
                            ng-model="ctrl.newCustomer.email" ng-model-options="{ updateOn : 'default blur' }"
                            ng-focus="ctrl.toggleEmailPrompt(true)" ng-blur="ctrl.toggleEmailPrompt(false)"/>
 
-                    <div class="prompt show-animation" ng-if="ctrl.showEmailPrompt">
-                        What's your email address?
+
+                    <div class="my-messages">
+                        <div class="prompt message-animation" ng-if="ctrl.showEmailPrompt">
+                            What's your email address?
+                        </div>
                     </div>
 
-                    <div ng-messages="ctrl.signupForm.email.$error" ng-if="ctrl.signupForm.email.$touched || ctrl.signupForm.$submitted">
+                    <div class="my-messages" ng-messages="ctrl.signupForm.email.$error" ng-if="ctrl.signupForm.email.$touched || ctrl.signupForm.$submitted">
                         <div class="message-animation" ng-message="required">
                             <strong>This field is required.</strong>
                         </div>
@@ -40,11 +43,13 @@
                            ng-model="ctrl.newCustomer.userName" ng-model-options="{ updateOn : 'default blur' }"
                            ng-focus="ctrl.toggleUsernamePrompt(true)" ng-blur="ctrl.toggleUsernamePrompt(false)"/>
 
-                    <div class="prompt show-animation" ng-if="ctrl.showUsernamePrompt">
-                        Choose a username that contains only letters and numbers, or use your email address.
+                    <div class="my-messages">
+                        <div class="prompt message-animation" ng-if="ctrl.showUsernamePrompt">
+                            Choose a username that contains only letters and numbers, or use your email address.
+                        </div>
                     </div>
 
-                    <div ng-messages="ctrl.signupForm.userName.$error" ng-if="ctrl.signupForm.userName.$touched || ctrl.signupForm.$submitted">
+                    <div class="my-messages" ng-messages="ctrl.signupForm.userName.$error" ng-if="ctrl.signupForm.userName.$touched || ctrl.signupForm.$submitted">
                         <div class="message-animation" ng-message="required">
                             <strong>This field is required.</strong>
                         </div>
@@ -65,13 +70,13 @@
                         </span>
                     </div>
 
-                    <div ng-messages="ctrl.signupForm.password.$error" ng-if="ctrl.signupForm.password.$touched || ctrl.signupForm.$submitted">
+                    <div class="my-messages" ng-messages="ctrl.signupForm.password.$error" ng-if="ctrl.signupForm.password.$touched || ctrl.signupForm.$submitted">
                         <div class="message-animation" ng-message="required">
                             <strong>This field is required.</strong>
                         </div>
                     </div>
 
-                    <div class="password-requirements show-animation" ng-if="!ctrl.signupForm.password.$valid">
+                    <div class="password-requirements" ng-if="!ctrl.signupForm.password.$valid">
                         <ul class="float-left">
                             <li ng-class="{'completed':!ctrl.signupForm.password.$error.lowerCase}">One lowercase character</li>
                             <li ng-class="{'completed':!ctrl.signupForm.password.$error.upperCase}">One uppercase character</li>
@@ -83,7 +88,7 @@
                         </ul>
                     </div>
 
-                    <div class="alert alert-success show-animation" role="alert" ng-if="ctrl.signupForm.password.$valid">
+                    <div class="alert alert-success message-animation" role="alert" ng-if="ctrl.signupForm.password.$valid">
                         Your password is secure and you are good to go!
                     </div>
                 </div>
