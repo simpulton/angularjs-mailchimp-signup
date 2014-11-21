@@ -1,5 +1,5 @@
 angular.module('ngMailChimp', ['ngMessages', 'ngAnimate'])
-    .controller('SignUpController', function ($log) {
+    .controller('SignUpController', function () {
         var ctrl = this,
             newCustomer = { email:'', userName:'', password:'' };
 
