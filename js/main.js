@@ -1,4 +1,4 @@
-angular.module('ngMailChimp', ['ngMessages', 'ngAnimate'])
+angular.module('ngMailChimp', ['ngAria', 'ngMessages', 'ngAnimate'])
     .controller('SignUpController', function () {
         var ctrl = this,
             newCustomer = { email:'', userName:'', password:'' };
